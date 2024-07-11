@@ -1,0 +1,29 @@
+Download MongoDB Compass
+after Downloading and running connect to deafult uri
+if show econrefused try to start running it command promt first
+
+open mongo Compass
+create database
+Dabase Name:Employes
+Database Name: Manger
+
+Add Data Insert Document
+/** 
+* Paste one or more documents here
+*/
+{
+  "_id": {
+    "$oid": "668e19cbb764cb4b956459ca"
+  },
+  "Name":"Harry",
+  "Location":"San Fransisco"
+}
+
+MongoDB CRUD Operations
+C - create
+R - read
+U - update
+D - delete
+
+To View Inserted Object click refersh arrow round circle
+

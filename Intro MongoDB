@@ -1,0 +1,35 @@
+Mongo & MongoD is same as Git & GitHUb
+install MongoDB Community Server From Offical Website
+
+SQL Terms/Concepts      MongoDB Terms/Concepts
+    database                database
+    tables                  collections
+    rows                    documents(BASON)
+    columns                 fields
+
+After that "Edit the System Eviourment Variables" and add Path of MongoDB bin folder
+C:\Program Files\MongoDB\Server\7.0\bin
+It will Open Box 
+System Properties/Advanced/Environment Variables/ User variables for mohit/click on Path/Edit/New/Paste/Ok/OK
+
+now type in command "mongod"
+
+Open the command prompt as an administrator. Right-click on the Command Prompt icon and choose “Run as administrator.”
+net start MongoDB
+
+Run the following command to list all services:
+sc query
+
+Open terminal in full screen
+You see mutiple lines of shutting down
+then try mongod --help
+look change of data directory that "--dbpath arg"
+
+then try this command
+create a folder name db before pasting
+mongod --dbpath C:\Program Files\MongoDB\Server\7.0\db
+you will see two lines of ""Successfully registered PrimaryOnlyService","attr":"
+
+Restart-Computer
+
+ 

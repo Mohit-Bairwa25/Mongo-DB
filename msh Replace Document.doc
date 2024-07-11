@@ -1,0 +1,9 @@
+Replace a Document
+To replace the entire content of a document except for the _id field, pass an entirely new document as the second argument to db.collection.replaceOne().
+
+When replacing a document, the replacement document must consist of only field/value pairs; i.e. do not include update operators expressions.
+
+db.inventory.replaceOne(
+   { item: "paper" },
+   { item: "paper", instock: [ { warehouse: "A", qty: 60 }, { warehouse: "B", qty: 40 } ] }
+)

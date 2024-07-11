@@ -1,0 +1,43 @@
+In MongoSH Run Deafult Command
+ (Default: mongodb://localhost/)
+
+ after that run
+ show dbs
+
+ it will show you databases created on your system
+
+use Employes
+It will show "switched to db Employes"
+
+Insert a Single Document
+db.inventory.insertOne(
+   { item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } }
+)
+output
+{
+  acknowledged: true,
+  insertedId: ObjectId('668e3f786cc8ac810db33600')
+}
+
+you can insert same document mutiple times
+
+
+To retrieve the document that you just inserted, query the collection:
+
+db.inventory.find( { item: "canvas" } )
+
+
+Insert Multiple Documents
+
+now inset mutiple objects as a javascript aaray []
+db.inventory.insertMany([
+   { item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } },
+   { item: "Painting", qty: 500, tags: ["Nylon"], size: { h: 28, w: 35.5, uom: "cm" } },
+   { item: "Sketch", qty: 900, tags: ["Polyster"], size: { h: 28, w: 35.5, uom: "cm" } }
+])
+
+db.inventory.insertMany([
+   { item: "journal", qty: 25, tags: ["blank", "red"], size: { h: 14, w: 21, uom: "cm" } },
+   { item: "mat", qty: 85, tags: ["gray"], size: { h: 27.9, w: 35.5, uom: "cm" } },
+   { item: "mousepad", qty: 25, tags: ["gel", "blue"], size: { h: 19, w: 22.85, uom: "cm" } }
+])

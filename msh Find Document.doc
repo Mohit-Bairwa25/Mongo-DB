@@ -1,0 +1,57 @@
+db.inventory.find()
+db.inventory.find( {} )
+To Fetch All the documents
+
+Query Documents
+{ <field1>: <value1>, ... }
+db.inventory.find( {qty:25} )
+
+db.inventory.insertMany([
+   { item: "journal", qty: 25, size: { h: 14, w: 21, uom: "cm" }, status: "A" },
+   { item: "notebook", qty: 50, size: { h: 8.5, w: 11, uom: "in" }, status: "A" },
+   { item: "paper", qty: 100, size: { h: 8.5, w: 11, uom: "in" }, status: "D" },
+   { item: "planner", qty: 75, size: { h: 22.85, w: 30, uom: "cm" }, status: "D" },
+   { item: "postcard", qty: 45, size: { h: 10, w: 15.25, uom: "cm" }, status: "A" }
+]);
+
+Specify Conditions Using Query Operators
+{ <field1>: { <operator1>: <value1> }, ... }
+either "A" or "D":
+db.inventory.find( { status: { $in: [ "A", "D" ] } } )
+
+Specify AND Conditions
+"A" and qty is less than ($lt) 30:
+db.inventory.find( { status: "A", qty: { $lt: 30 } } )
+
+Specify OR Conditions
+status equals "A" or qty is less than ($lt) 30:
+db.inventory.find( { $or: [ { status: "A" }, { qty: { $lt: 30 } } ] } )
+
+Specify AND as well as OR Conditions
+status equals "A" and either qty is less than ($lt) 30 or item starts with the character p:
+db.inventory.find( {
+     status: "A",
+     $or: [ { qty: { $lt: 30 } }, { item: /^p/ } ]
+} )
+
+Options: Allows you to set additional options for the query. Some common options include:
+limit: Limits the number of documents returned.
+db.inventory.find().limit(1)
+
+sort: Specifies the sorting order.
+Ascending Sort (1): To sort documents in ascending order based on a specific field, you can use the .sort() method. For instance:
+JavaScript
+db.inventory.find().sort({ qty: 1 })
+
+Descending Sort (-1): To sort documents in descending order, use -1 instead of 1:
+JavaScript
+db.inventory.find().sort({ qty: -1 })
+
+skip: Skips a specified number of documents.
+Using the skip() method:
+The skip() method allows you to control the starting point of the returned results by skipping a specified number of documents.
+db.inventory.find().skip(5)
+
+Combining with other operations:
+You can combine skip() with other methods like sort() to skip documents after sorting.
+db.inventory.find().sort({ qty: 1 }).skip(5)

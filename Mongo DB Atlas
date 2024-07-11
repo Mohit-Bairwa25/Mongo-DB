@@ -1,0 +1,21 @@
+In Security Database Access, Either You Can Create a New User
+or Use Admin User
+
+The Thing with Password is You Can Always Genrate New Password without Remembering Old Password
+use autogenrated Password & Copy it
+
+Suppose your Password is
+T7kKVn4uWnWzXEwI
+
+Deployment>Database>Cluster>Connect
+select MongoDb Compass, You will Get a Link Like this
+
+mongodb+srv://mohitbairwa25:<password>@clustermohit.gza9z66.mongodb.net/
+
+So in MongoDb Comapss You have to New Connection
+
+mongodb+srv://mohitbairwa25:T7kKVn4uWnWzXEwI@clustermohit.gza9z66.mongodb.net/
+only this format will Work
+
+Now Create a New database, Do a Entry
+go to mongodb atlas, click on browse Collections, there you can see an entry
